@@ -1,3 +1,6 @@
 ghostery.xpi
 
+src/__pycache__/
+src/geckodriver.log
+
 env/

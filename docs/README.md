@@ -46,9 +46,19 @@ Currently the only supported OS's are the Windows OS and Ubuntu/Debian. Since th
 UMA has the ability to download any media you are currenly playing. Such as a song you really like. Just tick the box if you want an mp3 and leave it empty for an mp4.  
 Then click the download button. Then the media will be downloaded to a folder called "media"
 
+### Features
+1. Select a specific song to play. (Completed; 16/12/2020, Wednesday)
+
+### Features to add
+1. Have a slider to listen to specific parts. 
+
+
 ### Known limitations
 1. Unable to display the following content available. Similar to YouTube, where there is a column with all other videos you can possible choose from. (Won't fix)
 
 3. Unable to skip straight to next video, once it has ended (Won't fix)
 
 4. Unable to skip straight to next video, on command. (Won't fix)
+
+
+

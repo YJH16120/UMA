@@ -20,7 +20,11 @@ from selenium.webdriver.common.action_chains import ActionChains as AC
 import video # To the video downloader
 
 class Player:
-    ghostery = os.getcwd() + "/ghostery.xpi"
+    try:
+        ghostery = os.getcwd() + "\\ghostery.xpi"
+    except:
+        ghostery = os.getcwd() + "/ghostery.xpi"
+
     opts = Options()
     opts.headless = True
     driver = webdriver.Firefox(options=opts)
@@ -87,43 +91,18 @@ class Player:
         action.perform()
 
     def PlayerControl(self, command, mp3=False):
-        if mp3 is False:
-            if command == "p": # Play, Pause mechanism
-                action = AC(self.driver)
-                action.send_keys("k")
-                action.perform()
+        if command == "av":
+            self.Play()
 
-            elif command == "av":
-                self.Play()
+        elif command == "r":
+            self.Replay()
 
-            elif command == "r":
-                self.Replay()
+        elif command == "q":
+            self.AbsoluteExit()
 
-            elif command == "q":
-                self.AbsoluteExit()
-
-            elif command == "dl":
-                M = Media(video=self.vidlink, mp3=mp3)
-                M.download()
-
-        else:
-            if command == "p": # Play, Pause mechanism
-                action = AC(self.driver)
-                action.send_keys("k")
-                action.perform()
-
-            elif command == "av":
-                self.Play()
-
-            elif command == "r":
-                self.Replay()
-
-            elif command == "q":
-                self.AbsoluteExit()
-
-            elif command == "dl":
-                M = Media(video=self.vidlink, mp3=mp3)
-                M.download()
+        elif command == "dl":
+            M = Media(video=self.vidlink, mp3=mp3)
+            M.download()
 
     def AbsoluteExit(self):
         self.driver.close()
